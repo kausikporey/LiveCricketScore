@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { SERVER_URL } from '../../URL';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import Header from './Header';
 
 
 function Match() {
@@ -24,6 +25,7 @@ function Match() {
 
     return (
         <>
+            <Header />
                 {
                     matchList.map((match) => {
                         return(

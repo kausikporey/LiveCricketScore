@@ -32,7 +32,7 @@ const CurrentPlayer = () => {
         })).catch(errors => {
             console.log(errors)
         })
-        setInterval(() => {
+        const interval = setInterval(() => {
             const requestOne = axios.get(`${SERVER_URL}/batsman/current/${selectedMatchDetails._id}`);
             const requestTwo = axios.get(`${SERVER_URL}/bowler/current/${selectedMatchDetails._id}`);
             const requestThree = axios.get(`${SERVER_URL}/match/getScoreById/${selectedMatchDetails._id}`);
@@ -47,6 +47,7 @@ const CurrentPlayer = () => {
                 console.log(errors)
             })
         }, 5000);
+        return () => clearInterval(interval)
     },[])
 
 
