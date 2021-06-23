@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import './LogIn.css'
-import { BrowserRouter as Router,Route,Link,Switch } from 'react-router-dom'
-
 
 const LogIn = () => {
     const [user,setUser] = useState({username:'',password:''})
@@ -16,7 +14,7 @@ const LogIn = () => {
         e.preventDefault();
         if(user.username == 'kousik' && user.password == 'kp590'){
             localStorage.setItem("user",JSON.stringify(user))  
-            window.location.href="http://localhost:3000/matchlist"
+            window.location.href="/matchlist"
         }else{
             setauthState(false)
         }
