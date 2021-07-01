@@ -34,7 +34,7 @@ function Match() {
                                     <span>{match.title}</span><br></br>
                                     <span>{match.team1}  <b>{match.team1Score.run}/{match.team1Score.wicket} ({match.team1Score.over})</b></span><br></br>
                                     <span>{match.team2}  <b>{match.team2Score.run}/{match.team2Score.wicket} ({match.team2Score.over})</b></span><br></br>
-                                    <span style={{color:'#4a90e2'}}>Hoogly Won By 3 Wickets</span>
+                                    <span style={{color:match.status == 'LIVE' ? 'red':'#4a90e2',fontWeight:match.status=='LIVE'?'bolder':''}}>{match.status}</span>
                                 </Link>
                                 <hr></hr>
                             </div>

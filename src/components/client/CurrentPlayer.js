@@ -17,6 +17,14 @@ const CurrentPlayer = () => {
         paddingLeft:'10px',
         marginBottom:'20px'
     }
+    const res_circle = {
+        borderRadius: '50%',
+        fontSize: '20px',
+        textAlign: 'center',
+        background: '#bcd6ff',
+        marginLeft:'20px',
+        padding:'5px'
+    }
 
     useEffect(() => {
         const requestOne = axios.get(`${SERVER_URL}/batsman/current/${selectedMatchDetails._id}`);
@@ -109,7 +117,7 @@ const CurrentPlayer = () => {
                     }
                 </tbody>
             </table>
-            <p style={{paddingLeft:'10px'}}>Current Overs : {matchDetails.currentover.map((ball) => ball+' ')}</p>
+            <p style={{paddingLeft:'10px'}}>Current Overs : {matchDetails.currentover.map((ball,index) => <span key={index} style={res_circle}> {ball + ' '} </span>)}</p>
             <div style={{display:'flex',justifyContent:'center',marginTop:'50px',marginBottom:'50px'}}>
                 <Link to="/scoredetails" style={{marginRight:'20px'}} className="btn btn-outline-success">
                     Details Score

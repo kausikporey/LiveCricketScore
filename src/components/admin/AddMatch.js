@@ -9,6 +9,7 @@ const AddMatch = (props) => {
         team1:'',
         team2:'',
         title:'',
+        status:'',
         team1Score:{run:'0',wicket:'0',over:'0'},
         team2Score:{run:'0',wicket:'0',over:'0'}
     }
@@ -17,7 +18,8 @@ const AddMatch = (props) => {
         initialValue = {
             team1:matchDetails.team1,
             team2:matchDetails.team2,
-            title:matchDetails.title
+            title:matchDetails.title,
+            status:matchDetails.status
         }
     }
     const [data,setData] = useState(initialValue);
@@ -69,6 +71,10 @@ const AddMatch = (props) => {
                 <div className="form-group">
                     <label>Enter Title</label>
                     <input type="text" name="title" value={data.title} onChange={onChangehandler} className="form-control" placeholder="Enter Title" />
+                </div>
+                <div className="form-group">
+                    <label>Enter Status</label>
+                    <input type="text" name="status" value={data.status} onChange={onChangehandler} className="form-control" placeholder="Enter Status" />
                 </div><br></br>
                 <div style={{display:'flex',justifyContent:'center',marginBottom:'20px'}}>
                     <input type="submit" value={matchDetails != '' ? "Update":"Submit"}  className="btn btn-primary"></input>
